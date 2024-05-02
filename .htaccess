@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^http://teslasoft.org/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.teslasoft.org/.*$ [NC]
+RewriteRule .(mp3|mp4|vaw|webm|dat|csv|flv|mov|mp2|sjson|dtx|tf|doc|dot|docx|dotx|epub|log|db|sql|key|pub)$ - [F]
+RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php [L]
+
+ErrorDocument 404 /404.shtml
+ErrorDocument 403 /403.shtml
